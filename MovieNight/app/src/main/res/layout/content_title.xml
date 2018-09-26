@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".viewControllers.activities.TitleActivity"
+    tools:showIn="@layout/activity_title">
+
+    <com.androidnetworking.widget.ANImageView
+        android:id="@+id/pictureImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/titleImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mock_text"
+        android:layout_margin="@dimen/default_margin"
+        app:layout_constraintTop_toBottomOf="@id/pictureImageView"
+        android:textAlignment="center"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/yearImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mock_text"
+        android:layout_margin="@dimen/default_margin"
+        app:layout_constraintTop_toBottomOf="@id/titleImageView"
+        android:textAlignment="center"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:id="@+id/plotImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/yearImageView"
+        android:text="@string/mock_text"
+        android:layout_margin="@dimen/default_margin"
+        android:textAlignment="center" />
+
+
+</android.support.constraint.ConstraintLayout>
