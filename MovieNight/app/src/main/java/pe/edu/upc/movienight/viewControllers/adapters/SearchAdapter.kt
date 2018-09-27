@@ -4,16 +4,13 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.androidnetworking.error.ANError
 import kotlinx.android.synthetic.main.search_item.view.*
 import pe.edu.upc.movienight.R
 import pe.edu.upc.movienight.models.Search
 import pe.edu.upc.movienight.models.Title
-import pe.edu.upc.movienight.network.OmdbApi
 import pe.edu.upc.movienight.viewControllers.activities.TitleActivity
 
 class SearchAdapter(var titles: ArrayList<Search>, val context: Context) :
@@ -36,8 +33,8 @@ class SearchAdapter(var titles: ArrayList<Search>, val context: Context) :
         //var context = view.context
         var titleDetails = Title()
         val pictureImageView = view.pictureImageView
-        val titleImageView = view.titleImageView
-        val yearImageView = view.yearImageView
+        val titleImageView = view.titleTextView
+        val yearImageView = view.yearTextView
         val searchItemLayout = view.searchItemLayout
 
         fun updateFrom(title: Search){

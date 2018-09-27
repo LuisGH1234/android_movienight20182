@@ -1,10 +1,8 @@
 package pe.edu.upc.movienight.viewControllers.activities
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.error.ANError
 import pe.edu.upc.movienight.R
 
@@ -40,9 +38,13 @@ class TitleActivity : AppCompatActivity() {
         pictureImageView.setErrorImageResId(R.mipmap.ic_launcher)
         pictureImageView.setDefaultImageResId(R.mipmap.ic_launcher)
         pictureImageView.setImageUrl(title.Poster)
-        titleImageView.text = title.Title
-        yearImageView.text = title.Year
-        plotImageView.text = title.Plot
+        titleTextView.text = title.Title
+        yearTextView.text = title.Year
+        plotTextView.text = title.Plot
+        directorTextView.text = title.Director
+        castTextView.text=title.Actors
+        ratingTextView.text=title.imdbRating
+
     }
 
     private fun errorHandler(anError: ANError?){

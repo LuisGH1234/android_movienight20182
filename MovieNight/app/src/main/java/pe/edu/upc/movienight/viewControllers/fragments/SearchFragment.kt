@@ -47,7 +47,7 @@ class SearchFragment : Fragment() {
         searchButton = view.searchButton
         searchRecyclerView = view.searchRecyclerView
         searchAdapter = SearchAdapter(titles, view.context)
-        searchLayoutManager = GridLayoutManager(view.context, 1)
+        searchLayoutManager = GridLayoutManager(view.context, 2)
 
         searchRecyclerView.adapter = searchAdapter
         searchRecyclerView.layoutManager = searchLayoutManager

@@ -10,40 +10,122 @@
 
     <com.androidnetworking.widget.ANImageView
         android:id="@+id/pictureImageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/default_poster_width"
+        android:layout_height="@dimen/default_poster_height"
         android:layout_margin="@dimen/default_margin"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:src="@mipmap/ic_launcher"/>
-
     <TextView
-        android:id="@+id/titleImageView"
+        android:id="@+id/titleTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/mock_text"
+        android:textSize="@dimen/default_title_size"
         android:layout_margin="@dimen/default_margin"
         app:layout_constraintTop_toBottomOf="@id/pictureImageView"
         android:textAlignment="center"
         android:textStyle="bold"/>
 
     <TextView
-        android:id="@+id/yearImageView"
+        android:id="@+id/yearTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/mock_text"
         android:layout_margin="@dimen/default_margin"
-        app:layout_constraintTop_toBottomOf="@id/titleImageView"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView"
         android:textAlignment="center"
         android:textStyle="italic"/>
-
     <TextView
-        android:id="@+id/plotImageView"
-        android:layout_width="match_parent"
+        android:id="@+id/genreText"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/yearImageView"
-        android:text="@string/mock_text"
+        android:textStyle="bold"
         android:layout_margin="@dimen/default_margin"
-        android:textAlignment="center" />
-
+        app:layout_constraintTop_toBottomOf="@id/yearTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/genre_text"/>
+    <TextView
+        android:id="@+id/genreTextView"
+        android:layout_width="@dimen/defaul_text_details_size"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/yearTextView"
+        app:layout_constraintStart_toEndOf="@id/plotText"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/mock_text"
+        android:layout_margin="@dimen/default_margin" />
+    <TextView
+        android:id="@+id/plotText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/default_margin"
+        app:layout_constraintTop_toBottomOf="@id/genreTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/plot_text"/>
+    <TextView
+        android:id="@+id/plotTextView"
+        android:layout_width="@dimen/defaul_text_details_size"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/genreTextView"
+        app:layout_constraintStart_toEndOf="@id/plotText"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/mock_text"
+        android:layout_margin="@dimen/default_margin" />
+    <TextView
+        android:id="@+id/directorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/default_margin"
+        app:layout_constraintTop_toBottomOf="@id/plotTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/director_text"/>
+    <TextView
+        android:id="@+id/directorTextView"
+        android:layout_width="@dimen/defaul_text_details_size"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/plotTextView"
+        app:layout_constraintStart_toEndOf="@id/plotText"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/mock_text"
+        android:layout_margin="@dimen/default_margin" />
+    <TextView
+        android:id="@+id/castText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/default_margin"
+        app:layout_constraintTop_toBottomOf="@id/directorTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/cast_text"/>
+    <TextView
+        android:id="@+id/castTextView"
+        android:layout_width="@dimen/defaul_text_details_size"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/directorTextView"
+        app:layout_constraintStart_toEndOf="@id/plotText"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/mock_text"
+        android:layout_margin="@dimen/default_margin" />
+    <TextView
+        android:id="@+id/ratingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/default_margin"
+        app:layout_constraintTop_toBottomOf="@id/castTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/rating_text"/>
+    <TextView
+        android:id="@+id/ratingTextView"
+        android:layout_width="@dimen/defaul_text_details_size"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/castTextView"
+        app:layout_constraintStart_toEndOf="@id/plotText"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/mock_text"
+        android:layout_margin="@dimen/default_margin" />
 
 </android.support.constraint.ConstraintLayout>
