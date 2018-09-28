@@ -8,4 +8,65 @@
     tools:context=".viewControllers.activities.EventActivity"
     tools:showIn="@layout/activity_event">
 
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimaryText"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/default_margin"
+        android:text="@string/mock_text"/>
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/nameTextView"
+        android:textColor="@color/colorSecondaryText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
+        android:layout_margin="@dimen/default_margin"
+        android:text="@string/mock_text"/>
+    <TextView
+        android:id="@+id/locationTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorSecondaryText"
+        app:layout_constraintTop_toBottomOf="@id/dateTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
+        android:layout_margin="@dimen/default_margin"
+        android:text="@string/mock_text"/>
+
+    <Button
+        android:id="@+id/viewPlayList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        app:layout_constraintTop_toBottomOf="@id/locationTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/add_playlist_button_text"
+        android:textColor="@color/colorIcons"
+        android:backgroundTint="@color/colorAccent"
+        />
+    <Button
+        android:id="@+id/viewSnackList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        app:layout_constraintTop_toBottomOf="@id/viewPlayList"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/add_snacklist_button_text"
+        android:textColor="@color/colorIcons"
+        android:backgroundTint="@color/colorAccent"
+        />
+
+
 </android.support.constraint.ConstraintLayout>
