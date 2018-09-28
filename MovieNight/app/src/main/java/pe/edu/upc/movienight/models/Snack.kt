@@ -1,5 +1,6 @@
 package pe.edu.upc.movienight.models
 
+<<<<<<< HEAD
 import android.os.Bundle
 
 data class Snack (
@@ -28,3 +29,5 @@ data class Snack (
     }
 
 }
+=======
+>>>>>>> master

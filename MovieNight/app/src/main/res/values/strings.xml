@@ -15,10 +15,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="mock_text">Mock Text</string>
     <string name="title_activity_title">Title Activity</string>
-    <string name="search_button_text">search</string>
+    <string name="search_button_text">Search</string>
     <string name="plot_text">Synopsis</string>
     <string name="director_text">Director</string>
     <string name="cast_text">Cast</string>
     <string name="genre_text">Genre</string>
     <string name="rating_text">Rating</string>
+    <string name="search_edit_text_hint">Title</string>
+    <string name="title_activity_event">EventActivity</string>
 </resources>
