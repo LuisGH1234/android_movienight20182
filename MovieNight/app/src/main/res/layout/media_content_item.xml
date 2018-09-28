@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/mediacontentLayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.androidnetworking.widget.ANImageView
+        android:id="@+id/pictureImageView"
+        android:layout_width="@dimen/default_poster_width"
+        android:layout_height="@dimen/default_poster_height"
+        android:layout_margin="@dimen/default_margin"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:text="@string/mock_text"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/pictureImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/yearTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_year"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/mock_text"/>
+
+</android.support.constraint.ConstraintLayout>

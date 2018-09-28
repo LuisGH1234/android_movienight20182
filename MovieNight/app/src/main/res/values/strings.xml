@@ -28,4 +28,8 @@
     <string name="new_event_location_hint">Event Location</string>
     <string name="add_playlist_button_text">Add PlayList</string>
     <string name="add_snacklist_button_text">Add SnackList</string>
+    <string name="title_activity_playlists">PlaylistsActivity</string>
+    <string name="title_activity_playlist">PlaylistActivity</string>
+    <string name="title_activity_add_playlist">AddPlaylistActivity</string>
+    <string name="title_activity_media_contens">MediaContensActivity</string>
 </resources>

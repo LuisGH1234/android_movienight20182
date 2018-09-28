@@ -57,6 +57,37 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="pe.edu.upc.movienight.viewControllers.activities.MainActivity" />
         </activity>
+        <activity
+            android:name=".viewControllers.activities.PlaylistsActivity"
+            android:label="@string/title_activity_playlists"
+            android:parentActivityName=".viewControllers.activities.EventActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pe.edu.upc.movienight.viewControllers.activities.EventActivity" />
+        </activity>
+        <activity
+            android:name=".viewControllers.activities.PlaylistActivity"
+            android:label="@string/title_activity_playlist"
+            android:parentActivityName=".viewControllers.activities.PlaylistsActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pe.edu.upc.movienight.viewControllers.activities.PlaylistsActivity" />
+        </activity>
+        <activity
+            android:name=".viewControllers.activities.AddPlaylistActivity"
+            android:label="@string/title_activity_add_playlist"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".viewControllers.activities.MediaContensActivity"
+            android:label="@string/title_activity_media_contens"
+            android:parentActivityName=".viewControllers.activities.PlaylistsActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pe.edu.upc.movienight.viewControllers.activities.PlaylistsActivity" />
+        </activity>
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package pe.edu.upc.movienight.viewControllers.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
@@ -18,15 +19,19 @@ class EventActivity : AppCompatActivity() {
 
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
             val intent=intent?:return
-            val event = Event.from(intent.extras)
+            val event = Event.from(intent.extras!!)
             nameTextView.text=event.name
             dateTextView.text=event.date
             locationTextView.text=event.location
-            /*viewPlayList.setOnClickListener {view->
+
+            viewPlayList.setOnClickListener {view->
                 val context= view.context
-                context.startActivity(Intent(view.context,ViewPlayListActivity::class.java).putExtras(event.toBundle()))
+                    val bundle = Bundle()
+                    bundle.putInt("eventID", event.id)
+                context.startActivity(Intent(view.context,PlaylistsActivity::class.java).putExtras(bundle))
             }
-            viewSnackList.setOnClickListener { view->
+
+            /*viewSnackList.setOnClickListener { view->
                 val context= view.context
                 context.startActivity(Intent(view.context,ViewSnackListActivity::class.java).putExtras(event.toBundle()))
             }*/

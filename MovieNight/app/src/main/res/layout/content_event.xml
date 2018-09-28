@@ -51,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@id/locationTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/add_playlist_button_text"
+        android:text="View Playlists"
         android:textColor="@color/colorIcons"
         android:backgroundTint="@color/colorAccent"
         />
@@ -63,7 +63,7 @@
         app:layout_constraintTop_toBottomOf="@id/viewPlayList"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/add_snacklist_button_text"
+        android:text="View Snacklists"
         android:textColor="@color/colorIcons"
         android:backgroundTint="@color/colorAccent"
         />

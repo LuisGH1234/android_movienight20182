@@ -11,10 +11,13 @@ class MovieNightApi{
         val baseUrl = "https://nodejsmovienight20182.herokuapp.com"
 
         val EventActions ="/event/event/"
-
+        val getPlaylists = "$baseUrl/event/playlist/"
         val getEventsList ="/event/event/"
         val getSnacks = "/event/snack/"
+        val getMediaContents = "/event/media_content/"
         val getsnacklist ="/event/snacklist/"
+        val postPlaylist = "$baseUrl/event/playlist/"
+
         fun requestEventList(userId:Int,
                              responseHandler: (EventsResponse?) -> Unit,
                              errorHandler: (ANError?) -> Unit){
@@ -95,6 +98,62 @@ class MovieNightApi{
                             errorHandler(anError)
                         }
 
+                    })
+        }
+
+        fun requestPlaylists(eventID: Int,
+                             responseHandler: (PlaylistResponse?) -> Unit,
+                             errorHandler: (ANError?) -> Unit){
+
+            AndroidNetworking.get("$getPlaylists$eventID").setPriority(Priority.LOW).build()
+                    .getAsObject(PlaylistResponse::class.java, object : ParsedRequestListener<PlaylistResponse>{
+                        override fun onResponse(response: PlaylistResponse?) {
+                            responseHandler(response)
+                        }
+
+                        override fun onError(anError: ANError?) {
+                            errorHandler(anError)
+                        }
+                    })
+        }
+
+        fun postNewPlaylist(eventID: Int, nameP: String, descriptionP: String,
+                            responseHandler: (NewEventResponse?) -> Unit,
+                            errorHandler: (ANError?) -> Unit){
+
+            val json: JSONObject = JSONObject()
+            json.put("name", nameP)
+            json.put("description", descriptionP)
+            json.put("event_id", eventID)
+            json.put("original", 0)
+
+            AndroidNetworking.post(postPlaylist).addHeaders("Content-Type", "application/json")
+                    .addJSONObjectBody(json).setPriority(Priority.LOW).build()
+                    .getAsObject(NewEventResponse::class.java, object : ParsedRequestListener<NewEventResponse>{
+                        override fun onResponse(response: NewEventResponse?) {
+                            responseHandler(response)
+                        }
+
+                        override fun onError(anError: ANError?) {
+                            errorHandler(anError)
+                        }
+                    })
+        }
+
+        fun requestMediaContents(playlistID: Int,
+                                 responseHandler: (Media_CResponse?) -> Unit,
+                                 errorHandler: (ANError?) -> Unit){
+
+            AndroidNetworking.get("$baseUrl$getMediaContents$playlistID")
+                    .setPriority(Priority.LOW).build()
+                    .getAsObject(Media_CResponse::class.java, object : ParsedRequestListener<Media_CResponse>{
+                        override fun onResponse(response: Media_CResponse?) {
+                            responseHandler(response)
+                        }
+
+                        override fun onError(anError: ANError?) {
+                            errorHandler(anError)
+                        }
                     })
         }
     }
