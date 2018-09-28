@@ -36,7 +36,7 @@ class EventsAdapter(var events:ArrayList<Event>, val context: Context):RecyclerV
 
         fun updateFrom(event:Event){
             nameTextView.text = event.name
-            dateTextView.text = event.date
+            dateTextView.text = event.date!!.removeRange(10,event.date!!.length)
             locationTextView.text = event.location
             eventLayout.setOnClickListener { view ->
                 val context = view.context
