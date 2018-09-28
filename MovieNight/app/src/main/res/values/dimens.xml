@@ -6,6 +6,7 @@
     <dimen name="default_margin">16dp</dimen>
     <dimen name="default_poster_width">250dp</dimen>
     <dimen name="default_poster_height">200dp</dimen>
+    <dimen name="default_image_size">120dp</dimen>
     <dimen name="margin_year">8dp</dimen>
     <dimen name="defaul_text_details_size">250dp</dimen>
     <dimen name="default_title_size">25dp</dimen>
