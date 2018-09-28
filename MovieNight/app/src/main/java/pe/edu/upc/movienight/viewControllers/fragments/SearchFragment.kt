@@ -14,6 +14,7 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import com.androidnetworking.error.ANError
 import kotlinx.android.synthetic.main.fragment_search.view.*
 
@@ -34,7 +35,7 @@ class SearchFragment : Fragment() {
     private lateinit var searchAdapter: SearchAdapter
     private lateinit var searchLayoutManager: RecyclerView.LayoutManager
     private lateinit var searchEditText: EditText
-    private lateinit var searchButton: Button
+    private lateinit var searchButton: ImageButton
     private lateinit var inm: InputMethodManager
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
