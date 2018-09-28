@@ -1,6 +1,7 @@
 package pe.edu.upc.movienight.viewControllers.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import pe.edu.upc.movienight.R
 import kotlinx.android.synthetic.main.event_item.view.*
 import pe.edu.upc.movienight.models.Event
+import pe.edu.upc.movienight.viewControllers.activities.EventActivity
 
 class EventsAdapter(var events:ArrayList<Event>, val context: Context):RecyclerView.Adapter<EventsAdapter.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -36,6 +38,13 @@ class EventsAdapter(var events:ArrayList<Event>, val context: Context):RecyclerV
             nameTextView.text = event.name
             dateTextView.text = event.date
             locationTextView.text = event.location
+            eventLayout.setOnClickListener { view ->
+                val context = view.context
+                context.startActivity(
+                        Intent(context,EventActivity::class.java)
+                                .putExtras(event.toBundle())
+                )
+            }
         }
     }
 

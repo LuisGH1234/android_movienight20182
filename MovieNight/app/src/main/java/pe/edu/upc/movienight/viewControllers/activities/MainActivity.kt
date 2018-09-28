@@ -1,11 +1,13 @@
 package pe.edu.upc.movienight.viewControllers.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_events.*
 import pe.edu.upc.movienight.R
 import pe.edu.upc.movienight.viewControllers.fragments.EventsFragment
 import pe.edu.upc.movienight.viewControllers.fragments.LibraryFragment
@@ -19,10 +21,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+       //var intentFragment:Boolean=false
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-
+        /*intentFragment= intent.extras.get("event") as Boolean
+        if (intentFragment){
+            navigation.selectedItemId = R.id.navigation_search
+        }*/
         navigation.selectedItemId = R.id.navigation_search
     }
 

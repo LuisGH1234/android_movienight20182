@@ -23,4 +23,9 @@
     <string name="rating_text">Rating</string>
     <string name="search_edit_text_hint">Title</string>
     <string name="title_activity_event">EventActivity</string>
+    <string name="title_activity_new_event">NewEventActivity</string>
+    <string name="new_event_name_hint">Event Name</string>
+    <string name="new_event_location_hint">Event Location</string>
+    <string name="add_playlist_button_text">Add PlayList</string>
+    <string name="add_snacklist_button_text">Add SnackList</string>
 </resources>
