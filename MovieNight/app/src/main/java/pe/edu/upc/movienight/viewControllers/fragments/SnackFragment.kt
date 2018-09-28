@@ -5,21 +5,20 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Adapter
+import com.androidnetworking.error.ANError
 import kotlinx.android.synthetic.main.fragment_snack.view.*
 
 import pe.edu.upc.movienight.R
 import pe.edu.upc.movienight.models.Snack
+import pe.edu.upc.movienight.network.MovieNightApi
 import pe.edu.upc.movienight.network.OmdbApi
+import pe.edu.upc.movienight.network.SnackResponse
 import pe.edu.upc.movienight.viewControllers.adapters.SnackAdapter
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
@@ -27,10 +26,10 @@ private const val ARG_PARAM2 = "param2"
  */
 class SnackFragment : Fragment() {
 
-    private lateinit var snacks: ArrayList<Snack>
-    private lateinit var snackRecyclerView: RecyclerView
-    private lateinit var snackAdapter: SnackAdapter
-    private lateinit var snackLayoutManager: RecyclerView.LayoutManager
+    lateinit var snacks: ArrayList<Snack>
+    lateinit var snackRecyclerView: RecyclerView
+    lateinit var snackAdapter: SnackAdapter
+    lateinit var snackLayoutManager: RecyclerView.LayoutManager
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -42,8 +41,20 @@ class SnackFragment : Fragment() {
         snackRecyclerView.adapter = snackAdapter
         snackRecyclerView.layoutManager = snackLayoutManager
 
+
+        MovieNightApi.requestSnacks(0,
+                {response-> responseHandler(response)},
+                { error-> errorHandler(error)})
         return view
     }
+    private fun responseHandler(response: SnackResponse?) {
+        snacks = response!!.snacks!!
+        snackAdapter.snacks = snacks
+        snackAdapter.notifyDataSetChanged()
 
+    }
+    private fun errorHandler(anError: ANError?) {
+        Log.d("MovieNight", anError!!.message)
+    }
 
 }

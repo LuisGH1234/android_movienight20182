@@ -10,7 +10,7 @@ import pe.edu.upc.movienight.R
 import pe.edu.upc.movienight.models.Snack
 import javax.xml.transform.Source
 
-class SnackAdapter(val snacks: ArrayList<Snack>, val context: Context):
+class SnackAdapter(var snacks: ArrayList<Snack>, val context: Context):
         RecyclerView.Adapter<SnackAdapter.ViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder{

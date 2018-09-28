@@ -76,7 +76,6 @@ class SearchFragment : Fragment() {
             Log.d("MovieNight", "No se encontraron coincidencias")
             return
         }*/
-
         titles = response!!.Search!!
         searchAdapter.titles = titles
         searchAdapter.notifyDataSetChanged()
