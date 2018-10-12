@@ -7,5 +7,6 @@ class MovieNightApp : Application() {
     override fun onCreate() {
         super.onCreate()
         AndroidNetworking.initialize(applicationContext)
+
     }
 }
