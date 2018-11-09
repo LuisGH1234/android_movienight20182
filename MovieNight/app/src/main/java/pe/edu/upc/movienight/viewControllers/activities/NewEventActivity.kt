@@ -1,6 +1,8 @@
 package pe.edu.upc.movienight.viewControllers.activities
 
+import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
@@ -37,6 +39,7 @@ class NewEventActivity : AppCompatActivity() {
                         { response -> responseHandler(response,view) },
                         { error -> errorHandler(error) })
             }
+
         }
 
 
@@ -52,6 +55,17 @@ class NewEventActivity : AppCompatActivity() {
 
     private fun errorHandler(anError: ANError?){
         Log.d("MovieNight", anError!!.message)
+    }
+
+    /** Check if this device has a camera */
+    private fun checkCameraHardware(context: Context): Boolean {
+        if (context.packageManager.hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
+            // this device has a camera
+            return true
+        }
+
+        return false
+
     }
 
 }

@@ -8,43 +8,30 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".viewControllers.activities.NewEventActivity"
     tools:showIn="@layout/activity_new_event">
-    <ImageView
-        android:id="@+id/nameImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="@dimen/default_margin"
-        android:src="@drawable/ic_local_movies_black_24dp"/>
+
+
     <EditText
         android:id="@+id/nameEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/default_margin"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/nameImageView"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:lines="1"
         android:hint="@string/new_event_name_hint"/>
 
-    <ImageView
-        android:id="@+id/locationImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/nameEditText"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="@dimen/default_margin"
-        android:src="@drawable/ic_location_on_black_24dp"/>
+
     <EditText
         android:id="@+id/locationEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/default_margin"
         app:layout_constraintTop_toBottomOf="@id/nameEditText"
-        app:layout_constraintStart_toEndOf="@id/locationImageView"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:lines="1"
-        android:hint="@string/new_event_location_hint"/>
+        android:hint="Descripción"/>
     <ImageView
         android:id="@+id/dateImageView"
         android:layout_width="wrap_content"
@@ -73,26 +60,53 @@
         app:layout_constraintStart_toEndOf="@id/dateImageView"
         app:layout_constraintEnd_toEndOf="parent"
         android:lines="1"
-        android:hint="@string/new_event_fecha"/>
+        android:hint="Seleccionar Fecha"/>
 
     <Button
-        android:id="@+id/addPlayList"
+        android:id="@+id/addWhere"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/default_margin"
         app:layout_constraintTop_toBottomOf="@id/dateEditText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:text="Añadir Ubicación"
+        android:textColor="@color/colorIcons"
+        android:backgroundTint="@color/colorAccent"
+        />
+
+    <Button
+        android:id="@+id/addPlayList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        app:layout_constraintTop_toBottomOf="@id/addWhere"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/add_playlist_button_text"
         android:textColor="@color/colorIcons"
         android:backgroundTint="@color/colorAccent"
         />
+
+    <Button
+        android:id="@+id/addFriends"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        app:layout_constraintTop_toBottomOf="@id/addPlayList"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Añadir amigos"
+        android:textColor="@color/colorIcons"
+        android:backgroundTint="@color/colorAccent"
+        />
+
     <Button
         android:id="@+id/addSnackList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/default_margin"
-        app:layout_constraintTop_toBottomOf="@id/addPlayList"
+        app:layout_constraintTop_toBottomOf="@id/addFriends"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/add_snacklist_button_text"
