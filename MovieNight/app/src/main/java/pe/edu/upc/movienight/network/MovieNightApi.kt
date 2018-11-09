@@ -8,15 +8,17 @@ import org.json.JSONObject
 
 class MovieNightApi{
     companion object {
-        val baseUrl = "https://nodejsmovienight20182.herokuapp.com"
+        val baseUrl = "https://nodejsmovienight20182.herokuapp.com/api/v2"
 
-        val EventActions ="/event/event/"
-        val getPlaylists = "$baseUrl/event/playlist/"
+        val EventActions ="$baseUrl/users/:user_id/events"
+        val getPlaylists = "$baseUrl/events/:event_id/playlists"
+        /* No aparece en la documentacion
         val getEventsList ="/event/event/"
-        val getSnacks = "/event/snack/"
-        val getMediaContents = "/event/media_content/"
-        val getsnacklist ="/event/snacklist/"
-        val postPlaylist = "$baseUrl/event/playlist/"
+        */
+        val getSnacks = "$baseUrl/events/:event_id/snacklists/:snacklist_id/snacks"
+        val getMediaContents = "$baseUrl/events/:event_id/playlists/:playlist_id/media_contents"
+        val getsnacklist ="$baseUrl/events/:event_id/snacklists"
+        val postPlaylist = "$baseUrl/events/:event_id/playlists"
 
         fun requestEventList(userId:Int,
                              responseHandler: (EventsResponse?) -> Unit,
@@ -64,8 +66,8 @@ class MovieNightApi{
                     })
         }
         fun requestSnacks(snackListId:Int,
-                         responseHandler: (SnackResponse?) -> Unit,
-                         errorHandler: (ANError?) -> Unit){
+                          responseHandler: (SnackResponse?) -> Unit,
+                          errorHandler: (ANError?) -> Unit){
 
             AndroidNetworking.get("$baseUrl$getSnacks$snackListId")
                     .setPriority(Priority.LOW)
@@ -83,8 +85,8 @@ class MovieNightApi{
         }
 
         fun requestSnackLists(eventId:Int,
-                          responseHandler: (SnackListResponse?) -> Unit,
-                          errorHandler: (ANError?) -> Unit){
+                              responseHandler: (SnackListResponse?) -> Unit,
+                              errorHandler: (ANError?) -> Unit){
 
             AndroidNetworking.get("$baseUrl$getSnacks$eventId")
                     .setPriority(Priority.LOW)
