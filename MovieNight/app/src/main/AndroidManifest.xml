@@ -88,6 +88,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="pe.edu.upc.movienight.viewControllers.activities.PlaylistsActivity" />
         </activity>
+        <activity
+            android:name=".viewControllers.activities.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
