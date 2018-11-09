@@ -73,7 +73,7 @@
         app:layout_constraintStart_toEndOf="@id/dateImageView"
         app:layout_constraintEnd_toEndOf="parent"
         android:lines="1"
-        android:hint="Event Date"/>
+        android:hint="@string/new_event_fecha"/>
 
     <Button
         android:id="@+id/addPlayList"
