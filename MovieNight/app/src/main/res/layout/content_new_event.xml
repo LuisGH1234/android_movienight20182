@@ -32,6 +32,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:lines="1"
         android:hint="Descripción"/>
+
     <ImageView
         android:id="@+id/dateImageView"
         android:layout_width="wrap_content"
@@ -40,17 +41,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_margin="@dimen/default_margin"
         android:src="@drawable/ic_event_black_45dp"/>
-    <!--<DatePicker
-        android:id="@+id/dateDatePicker"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:layout_margin="@dimen/default_margin"
-        app:layout_constraintTop_toBottomOf="@id/locationEditText"
-        app:layout_constraintStart_toEndOf="@id/dateImageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:datePickerMode="spinner"
-        android:calendarViewShown="false"
-        />-->
+
     <EditText
         android:id="@+id/dateEditText"
         android:layout_width="0dp"
@@ -59,58 +50,9 @@
         app:layout_constraintTop_toBottomOf="@id/locationEditText"
         app:layout_constraintStart_toEndOf="@id/dateImageView"
         app:layout_constraintEnd_toEndOf="parent"
+        android:inputType="date"
         android:lines="1"
         android:hint="Seleccionar Fecha"/>
 
-    <Button
-        android:id="@+id/addWhere"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/default_margin"
-        app:layout_constraintTop_toBottomOf="@id/dateEditText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="Añadir Ubicación"
-        android:textColor="@color/colorIcons"
-        android:backgroundTint="@color/colorAccent"
-        />
 
-    <Button
-        android:id="@+id/addPlayList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/default_margin"
-        app:layout_constraintTop_toBottomOf="@id/addWhere"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/add_playlist_button_text"
-        android:textColor="@color/colorIcons"
-        android:backgroundTint="@color/colorAccent"
-        />
-
-    <Button
-        android:id="@+id/addFriends"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/default_margin"
-        app:layout_constraintTop_toBottomOf="@id/addPlayList"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="Añadir amigos"
-        android:textColor="@color/colorIcons"
-        android:backgroundTint="@color/colorAccent"
-        />
-
-    <Button
-        android:id="@+id/addSnackList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/default_margin"
-        app:layout_constraintTop_toBottomOf="@id/addFriends"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/add_snacklist_button_text"
-        android:textColor="@color/colorIcons"
-        android:backgroundTint="@color/colorAccent"
-        />
 </android.support.constraint.ConstraintLayout>

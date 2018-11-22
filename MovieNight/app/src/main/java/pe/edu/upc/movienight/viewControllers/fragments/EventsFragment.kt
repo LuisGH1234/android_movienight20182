@@ -73,4 +73,6 @@ class EventsFragment : Fragment() {
         Log.d("MovieNight", anError!!.message)
     }
 
+
+
 }
