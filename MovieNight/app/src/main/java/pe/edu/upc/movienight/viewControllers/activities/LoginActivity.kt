@@ -1,5 +1,6 @@
 package pe.edu.upc.movienight.viewControllers.activities
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
@@ -24,7 +25,8 @@ class LoginActivity : AppCompatActivity() {
 
     fun onLogin(view: View) {
 
-
+        val preferences = getSharedPreferences(STRING_PREFERENCE, Context.MODE_PRIVATE)
+        preferences.edit().putString(ACCOUNT_TOKEN, "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZGQiOjEsInN1YiI6ImxhZ2gzLjMwQGdtYWlsLmNvbSIsInB3ZCI6ImFiYzEyM2FiYyIsInBobyI6Ijk5OTg4ODc3NyJ9.g3WgTpMcZV4NeR7ullAriF3XSLRTcFAEnmmYgFHMDaU").apply()
         launchHomeActivity()
 
     }

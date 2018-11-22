@@ -3,7 +3,9 @@ package pe.edu.upc.movienight.viewControllers.fragments
 
 
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.Fragment
@@ -34,6 +36,7 @@ class EventsFragment : Fragment() {
     lateinit var eventsLayoutManager:RecyclerView.LayoutManager
 
     lateinit var fabNewEvent:FloatingActionButton
+    private var result: SharedPreferences? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -46,7 +49,9 @@ class EventsFragment : Fragment() {
         eventsRecyclerView.adapter=eventsAdapter
         eventsRecyclerView.layoutManager=eventsLayoutManager
 
-        MovieNightApi.requestEventList(61,
+        val token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZGQiOjEsInN1YiI6ImxhZ2gzLjMwQGdtYWlsLmNvbSIsInB3ZCI6ImFiYzEyM2FiYyIsInBobyI6Ijk5OTg4ODc3NyJ9.g3WgTpMcZV4NeR7ullAriF3XSLRTcFAEnmmYgFHMDaU";
+
+        MovieNightApi.requestEventList(1,
                 {response->responseHandler(response)},
                 { error -> errorHandler(error)})
         fabNewEvent.setOnClickListener { view ->
@@ -58,8 +63,8 @@ class EventsFragment : Fragment() {
         if (!response!!.status.equals("ok")){
             return
         }
-        Log.d("MovieNight","Found ${response.events!!.size}")
-        events = response.events!!
+        Log.d("MovieNight","Found ${response.list!!.size}")
+        events = response.list!!
         eventsAdapter.events = events
         eventsAdapter.notifyDataSetChanged()
     }

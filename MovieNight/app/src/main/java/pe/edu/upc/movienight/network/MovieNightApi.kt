@@ -1,14 +1,22 @@
 package pe.edu.upc.movienight.network
 
+import android.content.Context
+import android.preference.PreferenceManager
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.ParsedRequestListener
+import android.support.v7.app.AppCompatActivity
 import org.json.JSONObject
 
 class MovieNightApi{
     companion object {
-        val baseUrl = "https://nodejsmovienight20182.herokuapp.com/api/v2"
+
+        private val ACCOUNT_TOKEN = "userToken"
+        private val STRING_PREFERENCE = "Session"
+
+        val baseUrl = "http://movienight21012.herokuapp.com/api/v2"
+
 
         val EventActions ="$baseUrl/users/:user_id/events"
         val getPlaylists = "$baseUrl/events/:event_id/playlists"
@@ -24,7 +32,8 @@ class MovieNightApi{
                              responseHandler: (EventsResponse?) -> Unit,
                              errorHandler: (ANError?) -> Unit){
 
-            AndroidNetworking.get("$baseUrl$EventActions$userId")
+            AndroidNetworking.get("http://movienight21012.herokuapp.com/api/v2/users/1/events")
+                    .addHeaders("authorization", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZGQiOjEsInN1YiI6ImxhZ2gzLjMwQGdtYWlsLmNvbSIsInB3ZCI6ImFiYzEyM2FiYyIsInBobyI6Ijk5OTg4ODc3NyJ9.g3WgTpMcZV4NeR7ullAriF3XSLRTcFAEnmmYgFHMDaU")
                     .setPriority(Priority.LOW)
                     .build()
                     .getAsObject(EventsResponse::class.java,object :ParsedRequestListener<EventsResponse>{

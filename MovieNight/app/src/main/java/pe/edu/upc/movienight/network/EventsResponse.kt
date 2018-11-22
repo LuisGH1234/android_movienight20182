@@ -4,5 +4,5 @@ import pe.edu.upc.movienight.models.Event
 
 class EventsResponse{
     val status:String = ""
-    val events: ArrayList<Event>? = null
+    val list: ArrayList<Event>? = null
 }

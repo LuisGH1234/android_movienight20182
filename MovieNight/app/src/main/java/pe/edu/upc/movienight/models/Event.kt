@@ -4,7 +4,7 @@ import android.os.Bundle
 
 data class Event(
         val id:Int,
-        val name:String?,
+        val name_event:String?,
         val location:String?,
         val date:String?
 ){
@@ -22,7 +22,7 @@ data class Event(
     fun toBundle(): Bundle {
         val bundle = Bundle()
         bundle.putInt("id", id)
-        bundle.putString("name", name)
+        bundle.putString("name", name_event)
         bundle.putString("location", location)
         bundle.putString("date", date)
         return bundle

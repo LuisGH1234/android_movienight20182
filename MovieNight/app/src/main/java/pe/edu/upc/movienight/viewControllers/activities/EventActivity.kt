@@ -20,9 +20,9 @@ class EventActivity : AppCompatActivity() {
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
             val intent=intent?:return
             val event = Event.from(intent.extras!!)
-            nameTextView.text=event.name
-            dateTextView.text=event.date
-            locationTextView.text=event.location
+            nameTextView.text=event.name_event
+            dateTextView.text = event.date
+            locationTextView.text= event.location
 
             viewPlayList.setOnClickListener {view->
                 val context= view.context
@@ -38,5 +38,7 @@ class EventActivity : AppCompatActivity() {
 
 
     }
+
+
 
 }

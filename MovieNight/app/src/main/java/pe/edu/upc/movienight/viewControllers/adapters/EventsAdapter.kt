@@ -31,12 +31,11 @@ class EventsAdapter(var events:ArrayList<Event>, val context: Context):RecyclerV
     class ViewHolder(view:View):RecyclerView.ViewHolder(view) {
         val eventLayout=view.eventLayout
         val nameTextView=view.nameTextView
-        val dateTextView=view.dateTextView
         val locationTextView=view.locationTextView
 
         fun updateFrom(event:Event){
-            nameTextView.text = event.name
-            dateTextView.text = event.date!!.removeRange(10,event.date!!.length)
+            nameTextView.text = "En "+event.location+ "a las "+event.date
+            //dateTextView.text = event.date!!.removeRange(10,event.date!!.length)
             locationTextView.text = event.location
             eventLayout.setOnClickListener { view ->
                 val context = view.context
