@@ -27,15 +27,15 @@ class NewEventActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         nameEditText=findViewById(R.id.nameEditText) as EditText
         locationEditText=findViewById(R.id.locationEditText) as EditText
-        dateEditText=findViewById(R.id.dateEditText) as EditText
+        //dateEditText=findViewById(R.id.dateEditText) as EditText
         checkFAB.setOnClickListener {view->
             if(!nameEditText!!.text.toString().equals("") and
-                    !locationEditText!!.text.toString().equals("") and
-                    !locationEditText!!.text.toString().equals("")) {
+                    !locationEditText!!.text.toString().equals("") /*and
+                    !locationEditText!!.text.toString().equals("")*/) {
                 MovieNightApi.postNewEvent(61,
                         nameEditText!!.text.toString(),
                         locationEditText!!.text.toString(),
-                        dateEditText!!.text.toString(),
+                        /*dateEditText!!.text.toString(),*/
                         { response -> responseHandler(response,view) },
                         { error -> errorHandler(error) })
             }

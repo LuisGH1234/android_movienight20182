@@ -48,14 +48,14 @@ class MovieNightApi{
                     })
         }
 
-        fun postNewEvent(userId:Int,name:String,location:String,date:String,
+        fun postNewEvent(userId:Int,name:String,location:String,/*date:String,*/
                          responseHandler: (NewEventResponse?) -> Unit,
                          errorHandler: (ANError?) -> Unit){
 
             val json:JSONObject = JSONObject()
             json.put("name",name)
             json.put("location",location)
-            json.put("date",date)
+            /*json.put("date",date)*/
             json.put("user_id",userId)
             json.put("rol_id",11) //Organizador
 

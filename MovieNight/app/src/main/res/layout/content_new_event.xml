@@ -33,7 +33,7 @@
         android:lines="1"
         android:hint="Descripción"/>
 
-    <ImageView
+    <!--<ImageView
         android:id="@+id/dateImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,7 +52,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:inputType="date"
         android:lines="1"
-        android:hint="Seleccionar Fecha"/>
+        android:hint="Seleccionar Fecha"/>-->
 
 
 </android.support.constraint.ConstraintLayout>
